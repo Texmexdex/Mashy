@@ -22,21 +22,29 @@
             <h2>Track 1</h2>
             <input type="file" id="file-input-1" accept="audio/*">
             <p class="file-name" id="file-name-1">No file loaded</p>
-            <canvas id="waveform-1" width="500" height="100"></canvas> <!-- Make canvas interactive -->
+            <canvas id="waveform-1" width="500" height="100"></canvas>
             <div class="controls">
                 <button class="play-pause" id="play-pause-1" disabled>Play/Pause</button>
                 <div class="control-row">
                     <label>Volume:</label>
                     <input type="range" class="volume" id="volume-1" min="0" max="1" step="0.01" value="0.7">
                 </div>
+
+                <!-- Tempo (Rate) Slider -->
                 <div class="control-row">
-                    <label>Rate (<span class="rate-value" id="rate-value-1">1.00</span>x):</label>
-                    <input type="range" class="playback-rate" id="rate-1" min="0.5" max="2.0" step="0.01" value="1.0">
+                    <label>Tempo (<span class="tempo-value" id="tempo-value-1">1.00</span>x):</label>
+                    <input type="range" class="tempo" id="tempo-1" min="0.5" max="2.0" step="0.01" value="1.0" disabled>
                 </div>
-                <div class="control-row loop-control">
+                <!-- Pitch Shift Slider -->
+                <div class="control-row">
+                    <label>Pitch (<span class="pitch-value" id="pitch-value-1">0</span> st):</label>
+                    <input type="range" class="pitch" id="pitch-1" min="-12" max="12" step="0.5" value="0" disabled> <!-- Semitones -->
+                </div>
+
+                 <div class="control-row loop-control">
                      <label for="loop-1">Loop:</label>
-                     <input type="checkbox" class="loop-toggle" id="loop-1">
-                     <span>(Drag Start/End lines on waveform)</span>
+                     <input type="checkbox" class="loop-toggle" id="loop-1" disabled>
+                     <span>(Drag Start/End lines)</span>
                 </div>
             </div>
         </div>
@@ -46,26 +54,37 @@
             <h2>Track 2</h2>
             <input type="file" id="file-input-2" accept="audio/*">
              <p class="file-name" id="file-name-2">No file loaded</p>
-            <canvas id="waveform-2" width="500" height="100"></canvas> <!-- Make canvas interactive -->
+            <canvas id="waveform-2" width="500" height="100"></canvas>
              <div class="controls">
                 <button class="play-pause" id="play-pause-2" disabled>Play/Pause</button>
-                <div class="control-row">
+                 <div class="control-row">
                     <label>Volume:</label>
                     <input type="range" class="volume" id="volume-2" min="0" max="1" step="0.01" value="0.7">
                 </div>
+
+                 <!-- Tempo (Rate) Slider -->
                  <div class="control-row">
-                    <label>Rate (<span class="rate-value" id="rate-value-2">1.00</span>x):</label>
-                    <input type="range" class="playback-rate" id="rate-2" min="0.5" max="2.0" step="0.01" value="1.0">
+                    <label>Tempo (<span class="tempo-value" id="tempo-value-2">1.00</span>x):</label>
+                    <input type="range" class="tempo" id="tempo-2" min="0.5" max="2.0" step="0.01" value="1.0" disabled>
                 </div>
+                 <!-- Pitch Shift Slider -->
+                 <div class="control-row">
+                    <label>Pitch (<span class="pitch-value" id="pitch-value-2">0</span> st):</label>
+                    <input type="range" class="pitch" id="pitch-2" min="-12" max="12" step="0.5" value="0" disabled> <!-- Semitones -->
+                </div>
+
                 <div class="control-row loop-control">
                      <label for="loop-2">Loop:</label>
-                     <input type="checkbox" class="loop-toggle" id="loop-2">
-                     <span>(Drag Start/End lines on waveform)</span>
+                     <input type="checkbox" class="loop-toggle" id="loop-2" disabled>
+                     <span>(Drag Start/End lines)</span>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Include the SoundTouch library first -->
+    <script src="soundtouch.js"></script>
+    <!-- Then include your custom script -->
     <script src="script.js"></script>
 </body>
 </html>
