@@ -1,0 +1,146 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.main-controls {
+    background-color: #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.main-controls label {
+    margin-left: 15px;
+}
+
+.track-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.track {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(50% - 30px);
+    min-width: 520px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.track h2 {
+    margin-top: 0;
+}
+
+.file-name {
+    font-style: italic;
+    color: #555;
+    height: 1.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 90%;
+    margin-bottom: 5px;
+}
+
+canvas {
+    background-color: #282c34;
+    border-radius: 4px;
+    margin: 10px 0;
+    display: block;
+    cursor: default; /* Default cursor */
+}
+
+canvas.interactive { /* Add class when interactive */
+     cursor: ew-resize; /* Indicate draggable horizontally */
+}
+
+
+.controls {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 90%;
+}
+
+/* Use .control-row for consistent alignment */
+.control-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.control-row label {
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.control-row .rate-value {
+    font-weight: bold;
+    min-width: 3em;
+    text-align: right;
+}
+
+/* Specific styling for loop control row */
+.loop-control {
+    justify-content: flex-start; /* Align items to the start */
+    gap: 5px;
+}
+.loop-control span {
+    font-size: 0.8em;
+    color: #666;
+}
+.loop-control input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+input[type="file"] {
+    margin-bottom: 5px;
+    align-self: center;
+}
+
+input[type="range"] {
+    cursor: pointer;
+    flex-grow: 1;
+}
+input[type="checkbox"] {
+    cursor: pointer;
+}
